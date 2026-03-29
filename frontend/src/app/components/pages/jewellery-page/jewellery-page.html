@@ -1,0 +1,42 @@
+<div class="card">
+
+  <!-- Image -->
+  <div class="image-container">
+    <img [src]="jewellery.imageUrl" [alt]="jewellery.name" />
+    <span class="favorite {{ jewellery.favorite ? '' : 'not' }}"> ❤ </span>
+  </div>
+
+  <!-- Details -->
+  <div class="details">
+
+    <div class="top">
+      <div class="name">{{ jewellery.name }}</div>
+    </div>
+
+    <span class="price"> Price: ₹{{ jewellery.price }}</span>
+
+    <div class="description">
+      Elegant and stylish jewellery perfect for special occasions.
+    </div>
+
+    <div class="tag">
+      <span *ngFor="let tag of jewellery.tags"
+            [routerLink]="['/tag', tag]">
+        {{ tag }}
+      </span>
+    </div>
+
+    <div class="origin">
+      {{ jewellery.origins.join(', ') }}
+    </div>
+    
+    <button class="cart-btn" 
+            [disabled]="isLoading || !jewellery"
+            (click)="addToCart()">
+      <span *ngIf="isLoading" class="spinner">⏳</span>
+      <span>{{ isLoading ? 'Adding...' : (itemInCartQuantity > 0 ? 'Added (' + itemInCartQuantity + ')' : 'Add to Cart') }}</span>
+    </button>
+
+  </div>
+
+</div>

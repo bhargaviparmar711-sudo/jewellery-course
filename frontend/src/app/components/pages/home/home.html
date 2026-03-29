@@ -1,0 +1,54 @@
+ <app-search></app-search>  
+ <app-tags></app-tags>
+ <ul>
+  <li *ngFor="let item of jewellery">
+
+    <a [routerLink]="['/jewellery', item.id]">
+
+      <!-- Image -->
+      <img [src]="item.imageUrl" [alt]="item.name" loading="lazy"/>
+
+      <div class="content">
+
+        <!-- Name + Price -->
+        <div class="top-row">
+          <div class="name">
+            {{ item.name }}
+          </div>
+
+          <div class="price">
+            ₹{{ item.price }}
+          </div>
+        </div>
+
+        <!-- Rating -->
+        <div class="stars">
+          <ng-container *ngFor="let star of getStars(item.stars)">
+            ⭐
+          </ng-container>
+        </div>
+
+        <!-- Origins -->
+        <div class="origins">
+          {{ item.origins }}
+        </div>
+
+        <button
+          class="add-cart-btn"
+          type="button"
+          (click)="addToCart(item); $event.stopPropagation(); $event.preventDefault()"
+        >
+          Add to Cart
+        </button>
+
+      </div>
+
+      <!-- Favorite -->
+      <span class="favorite">
+        {{ item.favorite ? '★' : '☆' }}
+      </span>
+
+    </a>
+
+  </li>
+</ul>

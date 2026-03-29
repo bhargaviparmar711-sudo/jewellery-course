@@ -1,0 +1,23 @@
+/* Thank You page already has inline styles - this is for additional responsive overrides if needed */
+
+@media (max-width: 480px) {
+  .thank-you-content {
+    margin: 0.5rem;
+    padding: 1.5rem 1rem;
+  }
+  
+  .order-details-card {
+    padding: 1.5rem;
+  }
+  
+  .receipt-section {
+    padding: 1.5rem;
+  }
+  
+  .items-table th,
+  .items-table td {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.9rem;
+  }
+}
+

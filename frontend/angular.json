@@ -44,15 +44,15 @@
           "options": {
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
+
+             "assets": [
+                  "src/assets"
+                ],
+
             "styles": [
               "src/styles.css"
             ],
+            
             "server": "src/main.server.ts",
             "outputMode": "server",
             "security": {

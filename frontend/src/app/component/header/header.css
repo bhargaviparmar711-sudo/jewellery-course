@@ -1,0 +1,64 @@
+header {
+  position: relative;
+  background: white;
+  padding: 0;
+  border-bottom: 1px solid #e72929;
+}
+
+a {
+  color: #af1313;
+}
+
+a:hover {
+  background: #e72929;
+  color: white;
+  cursor: pointer;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+a.logo {
+  font-weight: bold;  
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+ul a{
+    padding: 0.5rem 1rem;
+    display: inline-block;
+}
+a span{
+  background: #ff4d4d;
+  color: white;
+  padding: 0.1rem 0.45rem;
+  border-radius: 100rem;
+  font-size: 0.9rem;
+}
+
+.menu-container{
+  position: relative;
+}
+
+.menu{
+  position: absolute;
+  z-index: 1;
+  background: whitesmoke;
+  display: none;
+}
+.menu-container:hover .menu{
+  display: block;
+}
+.menu a{
+  width: 100%;  
+  display: block;
+  padding: 0.5rem 1rem;
+}

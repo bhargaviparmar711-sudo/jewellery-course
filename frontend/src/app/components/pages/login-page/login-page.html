@@ -1,0 +1,74 @@
+<div class="login-container">
+  <div class="login-box">
+    <div class="logo-section">
+      <h1>🏆 Noor Jewellers</h1>
+      <p>Welcome back! Please login to your account</p>
+    </div>
+
+    <!-- Error Message Display -->
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+
+    <form (ngSubmit)="login()">
+      <div class="input-group">
+        <input 
+          type="email" 
+          placeholder="Enter Email" 
+          [(ngModel)]="email"
+          name="email"
+          required
+          class="form-input"
+        />
+        <span class="input-icon">📧</span>
+      </div>
+
+      <div class="input-group">
+        <input 
+          type="password" 
+          placeholder="Enter Password" 
+          [(ngModel)]="password"
+          name="password"
+          required
+          class="form-input"
+        />
+        <span class="input-icon">🔒</span>
+      </div>
+
+      <div class="remember-forgot">
+        <label class="checkbox-container">
+          <input type="checkbox" [(ngModel)]="rememberMe" name="rememberMe">
+          <span class="checkmark"></span>
+          Remember me
+        </label>
+        <a href="#" class="forgot-link" (click)="forgotPassword(); $event.preventDefault()">Forgot password?</a>
+      </div>
+
+      <button 
+        type="submit" 
+        class="login-btn"
+        [disabled]="isLoading"
+      >
+        <span *ngIf="!isLoading">🔐 Login</span>
+        <span *ngIf="isLoading">⏳ Logging in...</span>
+      </button>
+    </form>
+
+    <div class="divider">
+      <span>OR</span>
+    </div>
+
+    <div class="social-login">
+      <button class="social-btn google" (click)="socialLogin('Google')">
+        <span>🔵</span> Google
+      </button>
+      <button class="social-btn facebook" (click)="socialLogin('Facebook')">
+        <span>📘</span> Facebook
+      </button>
+    </div>
+
+    <div class="signup-link">
+      <p>Don't have an account? <a href="/register">Sign up</a></p>
+    </div>
+  </div>
+</div>

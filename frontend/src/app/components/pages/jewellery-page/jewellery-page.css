@@ -1,0 +1,134 @@
+/* Layout like screenshot */
+:host {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* Card as row */
+.card {
+  display: flex;
+  gap: 30px;
+  background: #f8f8f8;
+  padding: 25px;
+  border-radius: 16px;
+  align-items: center;
+}
+
+/* Image */
+.image-container img {
+  width: 350px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* Favorite icon */
+.favorite {
+  position: absolute;
+  margin-left: -40px;
+  margin-top: 10px;
+  font-size: 20px;
+  color: red;
+}
+
+/* Details */
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 350px;
+}
+
+/* Name */
+.name {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Price */
+.price {
+  font-size: 20px;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+/* Description */
+.description {
+  color: #555;
+  font-size: 14px;
+}
+
+/* Tags */
+.tag span {
+  background: #eee;
+  padding: 5px 10px;
+  border-radius: 8px;
+  margin-right: 5px;
+  font-size: 12px;
+}
+
+/* Button like screenshot */
+.cart-btn {
+  margin-top: 15px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #0026ff, #00a6ff);
+  color: #333;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+}
+
+.cart-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #00f2ff, #00ffcc);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 165, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .cart-btn {
+    padding: 10px 16px;
+    font-size: 15px;
+    border-radius: 20px;
+  }
+}
+
+.cart-btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.cart-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.cart-btn .spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Success state for when item in cart */
+.cart-btn[added] {
+  background: linear-gradient(135deg, #4caf50, #43a047);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.cart-btn[added]:hover {
+  background: linear-gradient(135deg, #43a047, #388e3c);
+}
